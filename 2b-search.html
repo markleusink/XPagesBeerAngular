@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app="xpagesBeerApp">
+
+	<head>
+		<title>XPages, Beer & Angular 2b</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- some basic styling -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	
+		<!-- load Angular -->
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+
+		<script src="js/2-controller.js"></script>
+
+	</head>
+
+	<body ng-controller="BeerListCtrl">
+
+		<div class="container">
+
+			<div class="jumbotron">
+
+				Find a beer: <input ng-model="query" />
+
+			</div>
+			
+			<div ng-repeat="beer in beers | orderBy : 'name' : true | filter : query">
+
+				{{beer.name}}
+
+				<img ng-src="{{ beer.image }}" width="100" class="img-rounded" />
+
+
+			</div>
+
+		</div>
+	</body>
+
+</html>

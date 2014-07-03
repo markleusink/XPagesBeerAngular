@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="xpagesBeerApp">
+
+	<head>
+		<title>XPages, Beer & Angular 3</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- some basic styling -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	
+		<!-- load Angular -->
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+
+		<script src="js/3-remote.js"></script>
+
+	</head>
+
+	<body ng-controller="BeerListCtrl">
+		<div class="container">
+			<div class="row">
+
+				<div ng-repeat="beer in beers">
+
+					{{beer.name}}
+
+					<img ng-src="{{ beer.image }}" width="100" class="img-rounded" />
+
+				</div>
+
+			</div>
+		</div>
+	</body>
+
+</html>

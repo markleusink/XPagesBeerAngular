@@ -1,0 +1,73 @@
+<!doctype html>
+<html ng-app="xpagesBeerApp">
+
+	<head>
+		<title>XPages, Beer & Angular 4</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- some basic styling -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		
+		<!-- load Angular -->
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+
+		<script src="js/4-create.js"></script>
+
+	</head>
+
+	<body ng-controller="BeerListCtrl">
+		<div class="container">
+			<div class="row">
+
+				<h3>{{beers.length}} bottles of beers on the wall</h3>
+
+				<table class="table table-striped"><tbody>
+
+					<tr ng-repeat="beer in beers">
+						<td>
+
+							{{beer.name}}
+
+						</td>
+						<td>
+
+							<img ng-src="{{ beer.image }}" width="100" class="img-rounded" />
+
+						</td>
+						<td>
+
+							<button class="btn btn-warning" ng-click="deleteBeer(beer)">
+								<span class="glyphicon glyphicon-trash"> Remove</span>
+							</button>
+
+						</td>
+					</tr>
+
+				</tbody></table>
+
+				<form>
+
+					<div style="margin-top:20px" class="col-md-6">
+						<div class="panel panel-default">
+
+							<div class="panel-heading">Add a beer</div>
+							<div class="panel-body">
+
+								Name: <input type="text" ng-model="formData.name" />
+
+								<button type="submit" class="btn btn-primary" ng-click="createBeer()">Save</button>
+
+							</div>
+
+						</div>
+					</div>
+				</form>
+
+			</div>
+
+		</div>
+	</div>
+	</div>
+	</body>
+
+</html>
